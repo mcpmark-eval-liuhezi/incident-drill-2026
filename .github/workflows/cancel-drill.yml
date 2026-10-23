@@ -1,0 +1,13 @@
+name: CI Cancel Drill
+
+on:
+  push:
+    branches: [ci/cancel-drill]
+  workflow_dispatch:
+
+jobs:
+  sleep-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate long-running job (~10 minutes)
+        run: sleep 600
